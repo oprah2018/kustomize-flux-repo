@@ -1,0 +1,3 @@
+APP_THEME=dark
+LOG_LEVEL=info
+FEATURE_FLAG_NEW_UI=true

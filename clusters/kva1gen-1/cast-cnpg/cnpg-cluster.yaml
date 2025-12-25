@@ -1,0 +1,19 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: castdb
+spec:
+  instances: 3
+  storage:
+    size: 20Gi
+  postgresql:
+    parameters:
+      max_connections: "200"
+  bootstrap:
+    initdb:
+      database: castdb
+      owner: castuser
+      secret:
+        name: cnpg-credentials
+  monitoring:
+    enablePodMonitor: true

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app.kubernetes.io/name: frontend
+    app.kubernetes.io/component: web
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: frontend
+        app.kubernetes.io/component: web
+    spec:
+      containers:
+        - name: frontend
+          image: ghcr.io/example/frontend:1.1.0-qa
+          ports:
+            - containerPort: 80
+          env:
+            - name: API_URL
+              value: "http://backend.cast.svc.cluster.local:5000"
+            - name: FEATURE_FLAG_EXPERIMENTAL
+              value: "true"
