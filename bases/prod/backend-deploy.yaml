@@ -21,9 +21,11 @@ spec:
           image: ghcr.io/example/backend:1.0.0
           ports:
             - containerPort: 5000
-          env:
-            - name: APP_MODE
-              value: "production"
+          envFrom:
+            - configMapRef:
+                name: cast-common-config
+            - secretRef:
+                name: cast-common-secret
           readinessProbe:
             httpGet:
               path: /healthz

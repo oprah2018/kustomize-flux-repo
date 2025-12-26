@@ -5,13 +5,14 @@ namespace: cast
 
 resources:
   - ../../../bases/qa/
+  - ../../../bases/common/generators
 
 patches:
   - path: backend-patch.yaml
   - path: frontend-patch.yaml
 
 configMapGenerator:
-  - name: cast-config
+  - name: cast-qa-config
     files:
       - configmap-env.yaml
 

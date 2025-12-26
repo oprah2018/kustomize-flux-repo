@@ -21,6 +21,11 @@ spec:
           image: ghcr.io/example/frontend:1.0.0
           ports:
             - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: cast-common-config
+            - secretRef:
+                name: cast-common-secret
           readinessProbe:
             httpGet:
               path: /

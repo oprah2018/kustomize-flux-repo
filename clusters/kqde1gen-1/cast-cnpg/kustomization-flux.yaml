@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cast-cnpg
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: ./environments/qa/cast-cnpg
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  targetNamespace: cast-cnpg
+  wait: true
