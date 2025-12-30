@@ -8,7 +8,6 @@ resources:
   - ../../../bases/common/generators
   - ingress-frontend.yaml
   - ingress-backend.yaml
-  - namespace.yaml
 
 patches:
   - path: backend-patch.yaml
