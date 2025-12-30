@@ -4,7 +4,8 @@ kind: Kustomization
 namespace: cast-cnpg
 
 resources:
-  - ../cast
+  - ../../../bases/prod/
+
 
 patches:
   - path: backend-db-patch.yaml
