@@ -3,8 +3,8 @@ kind: Kustomization
 
 namespace: cast-cnpg
 
-# resources:
-#   - ../cast
+resources:
+  - ../cast
 
 patches:
   - path: backend-db-patch.yaml
