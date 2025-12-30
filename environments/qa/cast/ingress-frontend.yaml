@@ -1,20 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: backend
-  namespace: cast
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: frontend
+  labels:
+    app.kubernetes.io/name: frontend
+    app.kubernetes.io/component: web
 spec:
   ingressClassName: nginx
   rules:
-    - host: backend.prod.local
+    - host: frontend.qa.local
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: backend
+                name: frontend
                 port:
                   number: 80
