@@ -5,7 +5,7 @@ namespace: cast-cnpg
 
 resources:
   - ../cast
-  - namespace.yaml
+ 
 
 patches:
   - path: backend-db-patch.yaml

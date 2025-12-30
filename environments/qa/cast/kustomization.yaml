@@ -6,7 +6,7 @@ namespace: cast
 resources:
   - ../../../bases/qa/
   - ../../../bases/common/generators
-  - namespace.yaml
+
 
 patches:
   - path: backend-patch.yaml
