@@ -4,7 +4,7 @@ metadata:
   name: qa-cast
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 10m
   path: ./environments/qa/cast
   prune: true
   sourceRef:
