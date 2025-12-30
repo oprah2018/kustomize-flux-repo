@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./environments/qa/cast-cnpg
+  path: ./environments/qa/cast-cnpg/
   prune: true
   sourceRef:
     kind: GitRepository
