@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frontend
+  namespace: cast
   labels:
     app.kubernetes.io/name: frontend
     app.kubernetes.io/component: web
