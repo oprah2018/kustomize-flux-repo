@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: frontend.qa.example.com
+    - host: frontend-cnpg.prod.local
       http:
         paths:
           - path: /
