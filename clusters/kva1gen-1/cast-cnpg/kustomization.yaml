@@ -1,14 +1,15 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-
-resources:
-  - ../../../environments/prod/cast-cnpg
-  - cnpg-cluster.yaml
-  - cnpg-service.yaml
-  - cnpg-secret.yaml
-
-labels:
-  - pairs:
-      app.kubernetes.io/cluster: kva1gen-1
-      app.kubernetes.io/environment: prod
-    includeSelectors: true
+metadata:
+  name: prod-cast-cnpg
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: ./environments/prod/cast-cnpg
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  targetNamespace: cast-cnpg
+  createNamespace: true
+  wait: true

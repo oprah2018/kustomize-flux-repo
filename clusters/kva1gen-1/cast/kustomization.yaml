@@ -4,12 +4,12 @@ metadata:
   name: prod-cast
   namespace: flux-system
 spec:
-  interval: 5m
-  path: ./environments/prod/cast/
+  interval: 10m
+  path: ./environments/prod/cast
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
   targetNamespace: cast
-  createNamespace: true
   wait: true
+
