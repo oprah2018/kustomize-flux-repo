@@ -1,5 +1,15 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-
-resources:
-  - ../../../environments/qa/cast
+metadata:
+  name: qa-cast
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./environments/qa/cast
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  targetNamespace: cast
+  createNamespace: true
+  wait: true
