@@ -12,6 +12,7 @@ secretGenerator:
     literals:
       - username=appuser
       - password=supersecret
+
 generatorOptions:
   disableNameSuffixHash: true
 

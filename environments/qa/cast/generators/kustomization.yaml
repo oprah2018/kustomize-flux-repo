@@ -1,0 +1,23 @@
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: cast
+
+resources:
+  - ../../../../bases/common/generators
+
+configMapGenerator:
+  - name: app-config
+    behavior: merge
+    literals:
+      - APP_ENV=qa
+      - BACKEND_URL=http://backend.qa.local
+      - FRONTEND_THEME=light
+
+secretGenerator:
+  - name: db-secret
+    behavior: merge
+    literals:
+      - username=qauser
+      - password=QASuperSecret!

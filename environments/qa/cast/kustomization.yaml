@@ -12,10 +12,6 @@ patches:
   - path: backend-patch.yaml
   - path: frontend-patch.yaml
 
-configMapGenerator:
-  - name: cast-qa-config
-    files:
-      - configmap-env.yaml
 
 labels:
   - pairs:

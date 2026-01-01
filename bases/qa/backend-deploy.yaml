@@ -18,14 +18,14 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ghcr.io/example/backend:1.0.0
+          image: ealen/echo-server:latest
           ports:
             - containerPort: 5000
           envFrom:
             - configMapRef:
-                name: cast-common-config
+                name: app-config
             - secretRef:
-                name: cast-common-secret
+                name: db-secret
           readinessProbe:
             httpGet:
               path: /healthz

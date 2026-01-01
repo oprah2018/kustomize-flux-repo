@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: app-config
-data:
-  APP_ENV: "prod-cnpg"
-  DB_HOST: "castdb"
-  DB_PORT: "5432"
-  MESSAGE: "Hello from cast-cnpg backend"

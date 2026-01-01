@@ -5,7 +5,7 @@ namespace: cast
 
 resources:
   - ../../../bases/prod/
-  - ../../../bases/common/generators
+  - generators
   - ingress-frontend.yaml
   - ingress-backend.yaml
 
@@ -13,10 +13,6 @@ patches:
   - path: backend-patch.yaml
   - path: frontend-patch.yaml
 
-configMapGenerator:
-  - name: cast-prodconfig
-    files:
-      - configmap-env.yaml
 
 labels:
   - pairs:

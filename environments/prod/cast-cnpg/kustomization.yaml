@@ -4,8 +4,9 @@ kind: Kustomization
 namespace: cast-cnpg
 
 resources:
-  - ../../../bases/prod/
-  - configmap-env.yaml
+  - ../../../bases/prod
+  - generators
+  
 
 
 patches:
