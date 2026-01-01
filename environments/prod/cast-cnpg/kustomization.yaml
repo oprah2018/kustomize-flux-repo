@@ -5,6 +5,7 @@ namespace: cast-cnpg
 
 resources:
   - ../../../bases/prod/
+  - configmap-env.yaml
 
 
 patches:
