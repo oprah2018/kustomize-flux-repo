@@ -28,8 +28,8 @@ spec:
                 name: db-secret
           readinessProbe:
             httpGet:
-              path: /healthz
-              port: 5000
+              path: /
+              port: 80
           resources:
             requests:
               cpu: 100m

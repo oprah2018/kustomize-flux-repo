@@ -11,6 +11,6 @@ labels:
   - pairs:
       app.kubernetes.io/part-of: cast
       app.kubernetes.io/managed-by: kustomize
-      app.kubernetes.io/environment: production
+      app.kubernetes.io/environment: qa
     includeSelectors: true
     includeTemplates: true
