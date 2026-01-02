@@ -25,12 +25,12 @@ spec:
             - name: DATABASE_USER
               valueFrom:
                 secretKeyRef:
-                  name: cnpg-credentials
+                  name: db-secret
                   key: username
             - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: cnpg-credentials
+                  name: db-secret
                   key: password
             - name: APP_MODE
               value: "qa"
