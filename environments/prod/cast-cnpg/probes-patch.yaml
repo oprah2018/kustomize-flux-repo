@@ -17,14 +17,14 @@ spec:
         - name: backend
           livenessProbe:
             httpGet:
-              path: /healthz
-              port: 5000
+              path: /
+              port: 80
             initialDelaySeconds: 10
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ready
-              port: 5000
+              path: /
+              port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
           resources:
