@@ -6,13 +6,16 @@ namespace: cast
 resources:
   - ../../../bases/prod
 
-patches:
-  - path: image-replica-patch.yaml
-  - path: configmap-patch.yaml
+patchesJson6902:
+  - target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: cast-app
+    path: ingress-patch.yaml
 
 labels:
   - pairs:
       app.kubernetes.io/environment: prod
       app.kubernetes.io/instance: cast
     includeSelectors: true
-    includeTemplates: true
