@@ -4,6 +4,14 @@ kind: Kustomization
 resources:
   - ../../../environments/qa/cast/
 
+patchesJson6902:
+  - target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: cast-app
+    path: ingress-patch.yaml
+
 
 labels:
   - pairs:

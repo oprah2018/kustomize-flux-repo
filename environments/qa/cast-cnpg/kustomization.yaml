@@ -4,14 +4,14 @@ kind: Kustomization
 namespace: cast-cnpg
 
 resources:
-  - ../cast
- 
+  - ../../../bases/qa
 
 patches:
-  - path: backend-db-patch.yaml
+  - path: db-secret-patch.yaml
 
 labels:
   - pairs:
       app.kubernetes.io/environment: qa
       app.kubernetes.io/instance: cast-cnpg
     includeSelectors: true
+    includeTemplates: true

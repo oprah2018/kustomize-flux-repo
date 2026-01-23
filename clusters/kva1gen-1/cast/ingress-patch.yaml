@@ -1,0 +1,26 @@
+- op: replace
+  path: /metadata/annotations
+  value:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+
+- op: replace
+  path: /spec/rules
+  value:
+    - host: frontend.prod.company.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cast-app
+                port:
+                  number: 80
+
+- op: replace
+  path: /spec/tls
+  value:
+    - hosts:
+        - frontend.prod.company.com
+      secretName: cast-prod-tls

@@ -5,16 +5,13 @@ namespace: cast-cnpg
 
 resources:
   - ../../../bases/prod
-  - generators
-  
-
 
 patches:
-  - path: backend-db-patch.yaml
-  - path: probes-patch.yaml
+  - path: db-secret-patch.yaml
 
 labels:
   - pairs:
       app.kubernetes.io/environment: prod
       app.kubernetes.io/instance: cast-cnpg
     includeSelectors: true
+    includeTemplates: true

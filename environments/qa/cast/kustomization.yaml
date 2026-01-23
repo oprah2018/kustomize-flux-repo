@@ -4,17 +4,16 @@ kind: Kustomization
 namespace: cast
 
 resources:
-  - ../../../bases/qa/
-  - ../../../bases/common/generators
-
+  - ../../../bases/qa
 
 patches:
-  - path: backend-patch.yaml
-  - path: frontend-patch.yaml
-
+  - path: image-replica-patch.yaml
+  - path: configmap-patch.yaml
 
 labels:
   - pairs:
       app.kubernetes.io/environment: qa
       app.kubernetes.io/instance: cast
     includeSelectors: true
+    includeTemplates: true
+
