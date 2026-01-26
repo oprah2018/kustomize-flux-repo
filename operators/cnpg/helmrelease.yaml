@@ -1,27 +1,19 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+aapiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: cnpg-system
-  namespace: flux-system
+  name: cnpg
+  namespace: cnpg-system
 spec:
-  interval: 15m
-  releaseName: cnpg-system
-  targetNamespace: cnpg-system
-  createNamespace: true
+  interval: 5m
+  releaseName: cnpg
   chart:
     spec:
       chart: cloudnative-pg
-      version: ">=0.22.0"  # you can lock to a specific version if needed
+      version: "0.21.x"
       sourceRef:
         kind: HelmRepository
         name: cnpg
         namespace: flux-system
-  install:
-    remediation:
-      retries: 3
   upgrade:
     remediation:
       retries: 3
-  values:
-    monitoring:
-      podMonitorEnabled: false
