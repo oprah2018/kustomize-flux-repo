@@ -4,15 +4,16 @@ kind: Kustomization
 namespace: cast
 
 resources:
-  - ../../../bases/prod
+  - ../../../bases/prod/
 
-patchesJson6902:
+patches:
   - target:
       group: networking.k8s.io
       version: v1
       kind: Ingress
       name: cast-app
     path: ingress-patch.yaml
+  
 
 labels:
   - pairs:

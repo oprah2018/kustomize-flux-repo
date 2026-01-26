@@ -18,9 +18,3 @@
                 port:
                   number: 80
 
-- op: replace
-  path: /spec/tls
-  value:
-    - hosts:
-        - frontend.prod.company.com
-      secretName: cast-prod-tls
