@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ../../../environments/prod/cast/
 
-patchesJson6902:
+patches:
   - target:
       group: networking.k8s.io
       version: v1
