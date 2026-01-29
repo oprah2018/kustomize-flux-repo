@@ -7,7 +7,18 @@ resources:
   - ../../../bases/prod
 
 patches:
+  # Patch to modify the database secret for CNPG
   - path: db-secret-patch.yaml
+  
+  # Remove the Ingress resource from the production base
+  - target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: cast-ingress
+    patch: |-
+      - op: remove
+        path: /spec
 
 labels:
   - pairs:
