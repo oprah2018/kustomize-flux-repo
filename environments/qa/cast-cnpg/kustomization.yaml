@@ -8,6 +8,15 @@ resources:
 
 patches:
   - path: db-secret-patch.yaml
+   
+  - target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: cast-ingress
+    patch: |-
+      - op: remove
+        path: /spec
 
 labels:
   - pairs:
