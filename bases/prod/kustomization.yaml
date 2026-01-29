@@ -5,7 +5,7 @@ resources:
   - cast-deploy.yaml
   - cast-ingress.yaml
   - cast-networkpolicy.yaml
-  - cast-configmap.yaml
+  - cast-configMap.yaml
   - cast-secret.yaml
   
 
